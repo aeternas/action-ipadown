@@ -62,13 +62,13 @@ jobs:
 
       - name: Setup ipatool-py
         run: |
-          git clone -b itunes_server https://github.com/NyaMisty/ipatool-py
+          git clone -b itunes_server https://github.com/aeternas/ipatool-py
           pip3 install -r ipatool-py/requirements.txt
           mkdir -p ipaDown
         shell: bash
 
       - name: Setup iTunes Header Service
-        uses: NyaMisty/actions-iTunes-header@master
+        uses: aeternas/actions-iTunes-header@master
         if: ${{ github.event.inputs.operation != 'lookup' }}
         with:
           apple_id: ${{ github.event.inputs.appleId }}
